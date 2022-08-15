@@ -1,5 +1,7 @@
+
 import { useState } from "react";
 import { months } from "../services/utility";
+import Aztro from "../services/constants/horoscopes";// Importing the horoscope API call to use in onSubmit?
 
 export default function UserForm({ onSubmit }) {
   const _m = [...months.keys()];
@@ -69,7 +71,7 @@ export default function UserForm({ onSubmit }) {
           </div>
         </label>
       </div>
-      <button type="submit">Generate</button>
+      <button id="generate" type="submit">Generate</button>
     </form>
   );
 }

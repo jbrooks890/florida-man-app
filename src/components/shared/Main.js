@@ -2,6 +2,7 @@ import UserForm from "../UserForm";
 import { useState } from "react";
 import FLMan from "../FLMan";
 import { names } from "../../services/utility";
+import Aztro from "../../services/constants/horoscopes";
 
 export default function Main() {
   const [user, setUser] = useState({

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class Aztro extends Component {
     constructor(props){
         super(props);
@@ -19,7 +20,8 @@ class Aztro extends Component {
     render() {
         return (
           <div>
-              Current Date: {this.state.json.current_date} <br />
+              Current Date: {this.state.json.current_date} <br /> 
+              {/* figure out how to change current date to use the input form DOB instead of today's date */}
               Compatibility: {this.state.json.compatibility} <br />
               Lucky Number: {this.state.json.lucky_number} <br />
               Lucky Time: {this.state.json.lucky_time} <br />
