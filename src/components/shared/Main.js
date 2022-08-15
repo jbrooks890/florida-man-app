@@ -1,6 +1,7 @@
 import UserForm from "../UserForm";
 import { useState } from "react";
 
+
 export default function Main() {
   const [user, setUser] = useState({
     fName: "",
@@ -16,6 +17,7 @@ export default function Main() {
   return (
     <main>
       <UserForm />
+      
     </main>
   );
 }
