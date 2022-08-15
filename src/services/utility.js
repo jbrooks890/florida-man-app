@@ -14,6 +14,7 @@ const months = new Map([
 ]);
 
 const names = [
+  "Beech",
   "Allen",
   "Arnold",
   "Anne",
