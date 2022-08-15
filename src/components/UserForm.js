@@ -21,22 +21,16 @@ export default function UserForm({ onSubmit }) {
   };
 
   return (
-    <form
-      id="user-form"
-      onSubmit={(e) => {
-        e.preventDefault();
-        console.log(e);
-      }}
-    >
-      <h3>Florida Man</h3>
+    <form id="user-form" onSubmit={(e) => onSubmit(e)}>
+      <h1>Info</h1>
       <div className="form-name">
-        <label htmlFor="first-name">
-          <p>First name</p>
-          <input id="first-name" name="first-name" />
+        <label htmlFor="firstName">
+          <p>First</p>
+          <input id="firstName" name="firstName" required />
         </label>
-        <label htmlFor="last-name">
-          <p>Last name</p>
-          <input id="last-name" name="last-name" />
+        <label htmlFor="lastName">
+          <p>Last</p>
+          <input id="lastName" name="lastName" required />
         </label>
       </div>
       <div id="user-dob">
@@ -44,9 +38,10 @@ export default function UserForm({ onSubmit }) {
           <p>Birthday</p>
           <div>
             <select
-              id="birth-month"
-              name="birth-month"
+              id="birthMonth"
+              name="birthMonth"
               onChange={(e) => setSelectedMonth(e.currentTarget.value)}
+              required
             >
               {_m.map((month, i) => (
                 <option key={i} value={month}>
@@ -55,17 +50,19 @@ export default function UserForm({ onSubmit }) {
               ))}
             </select>
             <input
-              id="birth-day"
-              name="birth-day"
+              id="birthDay"
+              name="birthDay"
               type="number"
               min="1"
               max={months.get(selectedMonth)}
               defaultValue="1"
+              required
             />
             <select
-              id="birth-year"
-              name="birth-year"
+              id="birthYear"
+              name="birthYear"
               defaultValue={currYear - 18}
+              required
             >
               {popYears()}
             </select>

@@ -1,3 +1,7 @@
 export default function Header() {
-  return <header>FL Man</header>;
+  return (
+    <header>
+      <h1>FL Man</h1>
+    </header>
+  );
 }

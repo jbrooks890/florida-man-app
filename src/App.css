@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&family=Syncopate:wght@700&display=swap');
+
 :root {
-  --blue: hsl(200, 75%, 50%);
+  --blue: hsl(200, 75%, 40%);
+  --liteBlue: hsl(200, 70%, 80%);
   --green: hsl(160, 100%, 35%);
+  --mainFont: 'Freckle Face', sans-serif;
+  --faintShadow: hsla(0,0%,0%,0.05);
 }
 
 html, body, #root {
@@ -13,8 +18,20 @@ html, body, #root {
   justify-content: space-between;
   height: 100%;
   /* align-items: center; */
-  background-color: skyblue;
+  background-color: var(--liteBlue);
   text-align: center;
+}
+
+h1, h2 {
+  font-family: var(--mainFont);
+  color:hsl(160, 100%, 35%)
+}
+
+h1 {
+  text-transform: uppercase;
+  /* font-variant: small-caps; */
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 0 var(--faintShadow);
 }
 
 header, footer {
@@ -23,6 +40,11 @@ header, footer {
 
 header {
   background-color: var(--blue);
+}
+
+header h1 {
+  color: var(--liteBlue);
+  text-shadow: 2px 2px 0 var(--faintShadow);
 }
 
 footer {
@@ -71,6 +93,8 @@ button {
 #user-form label p {
   margin: 0;
   margin-bottom: 0.5em;
+  color: var(--blue);
+  text-align: left;
 }
 
 #user-form #user-dob div {
@@ -84,13 +108,13 @@ button {
 #user-form button {
   background-color: transparent;
   /* color: var(--green); */
-  margin-top: 2rem;
+  margin-bottom: 2rem;
   padding: 1rem;
   border: 2px solid var(--green);
-  border-radius: 5px;
+  border-radius: 100px;
 }
 
 #user-form button:hover {
-  color:skyblue;
+  color:var(--liteBlue);
   background-color: var(--green);
 }
