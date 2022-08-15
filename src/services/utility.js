@@ -14,7 +14,6 @@ const months = new Map([
 ]);
 
 const names = [
-  "Beech",
   "Allen",
   "Arnold",
   "Anne",
@@ -31,6 +30,7 @@ const names = [
   "Carl",
   "Carla",
   "Carol",
+  "Chowder",
   "Clyde",
   "Collin",
   "Clive",
@@ -136,6 +136,7 @@ const names = [
   "Wally",
   "Walter",
   "Wesley",
+  "Weiny",
 ];
 
 const animals = [
@@ -167,7 +168,10 @@ const animals = [
   "Possum",
   "Quail",
   "Snail",
-  "",
 ];
+
+const titles = ["Goon", "Dominator"];
+
+const suffixes = ["slayer", "nator"];
 
 export { months, names, animals };
