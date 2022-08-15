@@ -1,38 +1,96 @@
+:root {
+  --blue: hsl(200, 75%, 50%);
+  --green: hsl(160, 100%, 35%);
+}
+
+html, body, #root {
+  height: 100%; 
+}
+
 .App {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  /* align-items: center; */
+  background-color: skyblue;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header, footer {
+  padding: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+  background-color: var(--blue);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+footer {
+  background-color: var(--blue);
+}
+
+main {
+  align-self: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  appearance: none;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#user-form {
+  margin-block: 2rem;
+  padding: 2rem;
+  border: 2px solid var(--green);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+#user-form input,
+#user-form select {
+  appearance: none;
+  padding: 1rem;
+  background-color: transparent;
+  text-align: center;
+  outline: none;
+  border: 2px solid var(--green);
+  border-radius: 5px;
+}
+
+::selection {
+  background-color: hsla(0,0%,0%,0.1);
+}
+
+#user-form label {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+#user-form label p {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+#user-form #user-dob div {
+  display: flex;
+}
+
+#user-form #user-dob div > *:not(:last-child){
+  margin-right: 0.5rem;
+}
+
+#user-form button {
+  background-color: transparent;
+  /* color: var(--green); */
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 2px solid var(--green);
+  border-radius: 5px;
+}
+
+#user-form button:hover {
+  color:hsl(200, 75%, 50%);
+  background-color: var(--green);
 }
