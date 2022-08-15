@@ -91,6 +91,6 @@ button {
 }
 
 #user-form button:hover {
-  color:hsl(200, 75%, 50%);
+  color:skyblue;
   background-color: var(--green);
 }
