@@ -1,5 +1,6 @@
 import UserForm from "../UserForm";
 import { useState } from "react";
+import Aztro from "../../services/constants/horoscopes";
 
 
 export default function Main() {
@@ -17,6 +18,7 @@ export default function Main() {
   return (
     <main>
       <UserForm />
+  
       
     </main>
   );
