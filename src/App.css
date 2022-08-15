@@ -94,3 +94,14 @@ button {
   color:skyblue;
   background-color: var(--green);
 }
+
+#article{
+  background-image: url(https://wallpaperaccess.com/full/1717445.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  max-width: 2560px;
+  max-height: 1440px;
+  height: 67%;
+  width: 100%;
+  
+}
