@@ -4,6 +4,7 @@
   --blue: hsl(200, 75%, 40%);
   --liteBlue: hsl(200, 70%, 80%);
   --green: hsl(160, 100%, 35%);
+  --greenGrad: linear-gradient(135deg, lime, var(--green));
   --mainFont: 'Freckle Face', sans-serif;
   --faintShadow: hsla(0,0%,0%,0.05);
 }
@@ -65,6 +66,7 @@ button {
 #user-form {
   margin-block: 2rem;
   padding: 2rem;
+  /* background-image: var(--greenGrad); */
   border: 2px solid var(--green);
   border-radius: 10px;
   box-sizing: border-box;
@@ -75,6 +77,7 @@ button {
   appearance: none;
   padding: 1rem;
   background-color: transparent;
+  caret-color: var(--green);
   text-align: center;
   outline: none;
   border: 2px solid var(--green);

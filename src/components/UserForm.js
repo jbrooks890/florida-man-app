@@ -6,7 +6,7 @@ export default function UserForm({ onSubmit }) {
   const [selectedMonth, setSelectedMonth] = useState(_m[0]);
   const currYear = new Date().getFullYear();
 
-  //   console.log(currYear);
+  console.log(currYear);
 
   const popYears = () => {
     const arr = [];
