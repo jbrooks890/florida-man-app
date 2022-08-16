@@ -3,6 +3,9 @@ import { useState } from "react";
 import FLMan from "../FLMan";
 import { names } from "../../services/utility";
 import Aztro from "../../services/constants/horoscopes";
+import { Routes, Route } from "react-router-dom";
+import About from "../About";
+import Article from "../Article";
 
 export default function Main() {
   const [user, setUser] = useState({
@@ -108,8 +111,20 @@ export default function Main() {
 
   return (
     <main>
-      {!user.set && <UserForm onSubmit={(e) => handleSubmit(e)} />}
-      {user.set && <FLMan />}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            user.set ? (
+              <FLMan />
+            ) : (
+              <UserForm onSubmit={(e) => handleSubmit(e)} />
+            )
+          }
+        />
+        <Route path="/article" element={<Article date="08-15" />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </main>
   );
 }

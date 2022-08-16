@@ -11,6 +11,7 @@
 
 html, body, #root {
   height: 100%; 
+  font-size: 18px;
 }
 
 .App {
@@ -21,6 +22,11 @@ html, body, #root {
   /* align-items: center; */
   background-color: var(--liteBlue);
   text-align: center;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
 }
 
 h1, h2 {
@@ -36,6 +42,7 @@ h1 {
 }
 
 header, footer {
+  color: var(--liteBlue);
   padding: 2rem;
 }
 
@@ -82,6 +89,10 @@ button {
   outline: none;
   border: 2px solid var(--green);
   border-radius: 5px;
+}
+
+#user-form input {
+  flex-grow: 1;
 }
 
 ::selection {
@@ -131,4 +142,16 @@ button {
   height: 67%;
   width: 100%;
   
+}
+
+/* ----------- NAV ----------- */
+
+nav a  {
+  color: var(--liteBlue);
+  font-family: var(--mainFont);
+  letter-spacing: 0.05em;
+}
+
+nav a:not(:last-of-type){
+  margin-right: 1em;
 }
