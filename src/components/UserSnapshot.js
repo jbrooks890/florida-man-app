@@ -1,9 +1,13 @@
-export default function UserSnapshot({ fName, lName, dob }) {
+export default function UserSnapshot({ user, edit }) {
+  const { fName, lName, dob } = user;
+  const { month, day, year, full: fullBday } = dob;
+
   return (
-    <div id="user-snapshot">
+    <fieldset id="user-snapshot">
+      <legend>User</legend>
       <p>{`${fName} ${lName}`}</p>
-      <p>{dob}</p>
-      <button>Edit</button>
-    </div>
+      <p>{fullBday}</p>
+      <button onClick={edit}>Edit</button>
+    </fieldset>
   );
 }

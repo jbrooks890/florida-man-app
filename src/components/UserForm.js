@@ -1,12 +1,12 @@
-
 import { useState } from "react";
 import { months } from "../services/utility";
-import Aztro from "../services/constants/horoscopes";// Importing the horoscope API call to use in onSubmit?
+import Aztro from "../services/constants/horoscopes"; // Importing the horoscope API call to use in onSubmit?
 
-export default function UserForm({ onSubmit }) {
+export default function UserForm({ onSubmit, user }) {
   const _m = [...months.keys()];
   const [selectedMonth, setSelectedMonth] = useState(_m[0]);
   const currYear = new Date().getFullYear();
+  const { fName, lName } = user;
 
   console.log(currYear);
 
@@ -28,11 +28,11 @@ export default function UserForm({ onSubmit }) {
       <div className="form-name">
         <label htmlFor="firstName">
           <p>First</p>
-          <input id="firstName" name="firstName" required />
+          <input id="firstName" name="firstName" placeholder={fName} required />
         </label>
         <label htmlFor="lastName">
           <p>Last</p>
-          <input id="lastName" name="lastName" required />
+          <input id="lastName" name="lastName" placeholder={lName} required />
         </label>
       </div>
       <div id="user-dob">
@@ -71,7 +71,9 @@ export default function UserForm({ onSubmit }) {
           </div>
         </label>
       </div>
-      <button id="generate" type="submit">Generate</button>
+      <button id="generate" type="submit">
+        Generate
+      </button>
     </form>
   );
 }

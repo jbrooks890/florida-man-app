@@ -118,6 +118,13 @@ button {
   flex-grow: 1;
 }
 
+#user-form input::placeholder {
+  font-style: italic;
+  color: hsla(0,0%,0%,0.25);
+  /* text-transform: uppercase; */
+  /* text-align: left; */
+}
+
 ::selection {
   background-color: hsla(0,0%,0%,0.1);
 }
@@ -187,4 +194,34 @@ nav a:not(:last-of-type){
   text-align: justify;
   text-align-last: center;
   box-sizing: border-box;
+}
+
+/* ----------- USER SNAPSHOT ----------- */
+
+#user-snapshot {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  border: 2px solid var(--blue);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#user-snapshot > *:not(:last-child) {
+  margin-right: 1rem;
+}
+
+#user-snapshot button {
+  background-color: transparent;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  border-radius: 100px;
+}
+
+#user-snapshot legend {
+  text-transform: uppercase;
+  font-size: small;
+  font-weight: 600;
+  color: var(--blue);
 }

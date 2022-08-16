@@ -1,5 +1,5 @@
 import UserForm from "../UserForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FLMan from "../FLMan";
 import { names } from "../../services/utility";
 import Aztro from "../../services/constants/horoscopes";
@@ -27,7 +27,9 @@ export default function Main() {
     age: 0,
   });
 
-  console.log(user);
+  console.log(flMan);
+
+  const editUser = () => setUser((prev) => ({ ...prev, set: false }));
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -94,6 +96,12 @@ export default function Main() {
     }
 
     console.log(flName);
+
+    setFLMan((prev) => ({
+      ...prev,
+      fName: flName[0] ? flName[0] : user.fName,
+      lName: flName[1] ? flName[1] : user.lName,
+    }));
   };
 
   const getFLManName = (first, last) => {
@@ -104,10 +112,14 @@ export default function Main() {
 
     console.log(flFirst, flLast);
     // console.log({ first }, { last });
-    return flLast != flFirst ? [flFirst, flLast] : getFLManName(first, last);
+    return flLast != flFirst || (!flFirst ? !flLast : !flFirst)
+      ? [flFirst, flLast]
+      : getFLManName(first, last);
   };
 
-  user.set && genFLMan();
+  useEffect(() => {
+    user.set && genFLMan();
+  }, [user]);
 
   return (
     <main>
@@ -116,13 +128,17 @@ export default function Main() {
           path="/"
           element={
             user.set ? (
-              <FLMan />
+              <FLMan user={user} char={flMan} editUser={editUser} />
             ) : (
-              <UserForm onSubmit={(e) => handleSubmit(e)} />
+              <UserForm user={user} onSubmit={(e) => handleSubmit(e)} />
             )
           }
         />
-        <Route path="/article" element={<Article date="08-15" />} />
+
+        <Route
+          path="/article"
+          element={<Article month={user.dob.month} day={user.dob.day} />}
+        />
         <Route path="/about" element={<About />} />
       </Routes>
     </main>
