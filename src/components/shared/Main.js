@@ -139,6 +139,11 @@ export default function Main() {
           path="/article"
           element={<Article month={user.dob.month} day={user.dob.day} />}
         />
+
+        <Route
+          path="/article"
+          element={<Article month={user.dob.month} day={user.dob.day} />}
+        />
         <Route path="/about" element={<About />} />
       </Routes>
     </main>
